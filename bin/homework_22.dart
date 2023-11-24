@@ -1,4 +1,5 @@
 
+import 'models/user.dart';
 import 'package:homework_22/homework_22.dart' as homework_22;
 import 'package:http/http.dart';
 
@@ -22,9 +23,37 @@ print(response3);
 */
 
 //Task_5
+/*
 void main() async{
   print("University api: ");
   String response4 = await NetworkServices2.getData4(NetworkServices2.apiUniversity);
   print(response4);
+}
+ */
+
+//---------class task 1----------//
+/*
+void main() async{
+  String data = await NetworkService.getData(NetworkService.apiPosts);
+
+  List<User> list = userListFromData(data);
+
+  list.forEach((element) {
+    print(element);
+  });
+
+}
+ */
+//---------class task 1----------//
+
+void main() async{
+  String data = await NetworkService.getData(NetworkService.apiPosts);
+
+  List<Product> list = productListFromData(data);
+
+  list.forEach((element) {
+    print(element.details.specs.screenSize);
+  });
+
 }
 
